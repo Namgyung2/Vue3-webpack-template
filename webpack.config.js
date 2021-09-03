@@ -16,7 +16,9 @@ module.exports = {
     // 경로 별칭 설정
     alias: {
       '~': path.resolve(__dirname, 'src'),
-      'assets': path.resolve(__dirname, 'src/assets')
+      'images': path.resolve(__dirname, 'src/images'),
+      'scss': path.resolve(__dirname, 'src/scss'),
+      'components' : path.resolve(__dirname, 'src/components')
     }
   },
 
@@ -70,7 +72,10 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: 'static' }
+        { 
+          from: 'src/images' ,
+          to: 'images'
+        }
       ]
     }),
     new VueLoaderPlugin()
